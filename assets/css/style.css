@@ -1,0 +1,36 @@
+body{
+    background: url('../img/rain-figurine-1920x1280.jpg');
+    background-size: cover;
+}
+#main{
+    margin-top:30px;
+    font-family: 'Roboto', sans-serif;
+    color: goldenrod;
+    text-align:center;
+}
+
+/* Header */
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: xx-large;
+}
+h2{
+    font-size: large;
+}
+
+/* Summary */
+
+/* Data */
+button{
+    background-color: white;
+    border: 2px solid black;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: small;
+    color: blue;
+}
+button:hover{
+    background-color: gray;
+    border: 2px solid goldenrod;
+    color: white;
+}
+
