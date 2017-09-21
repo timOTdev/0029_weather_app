@@ -8,10 +8,35 @@ $(document).ready(function() {
         var darkSkyAPI = "https://api.darksky.net/forecast/";
         var latitude = response.loc.split(",")[0];
         var longitude = response.loc.split(",")[1];
-        var weatherURL = corsURL + darkSkyKey + darkSkyAPI + "/" + latitude + "," + longitude;
-    })
+        var weatherURL = corsURL + darkSkyAPI + darkSkyKey + "/" + latitude + "," + longitude;
 
-    // Make call to Dark Sky API
+        // Make call to Dark Sky API
+        function getData() {        
+            //retrieve weather data
+            $.getJSON(weatherURL, function(data) {
+            $("#conditions").html(data.currently.summary);
+    
+            var tempF = Math.round(data.currently.temperature);
+            $("#tempF").html("Current Temperature: <br/>" + tempF + "\xB0F");
+    
+            var icon = data.currently.icon;
+            $("#icon").html("Icon: <br/>");
+    
+            var windSpeed = data.currently.windSpeed;
+            $("#windSpeed").html("Current Wind Speed: <br/>" + windSpeed + " mph");
+    
+            var precipProbability = data.currently.precipProbability;
+            $("#precipProbability").html("Chance of Precipitation: <br/>" + precipProbability + "%");
+            
+            var humidity = data.currently.humidity;
+            $("#humidity").html("Humidity: <br/>" + humidity + "%");
+            console.log(data.currently.summary);
+            })
+        }
+        getData();
+    }) // End json call
+
+    
 
     // Retrieve and render weather data
     
