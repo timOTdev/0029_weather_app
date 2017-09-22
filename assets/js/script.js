@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         // Make call to Dark Sky API
         function getData() {        
-            //retrieve weather data
+            // Retrieve and render weather data
             $.getJSON(weatherURL, function(data) {
             $("#conditions").html(data.currently.summary);
     
@@ -31,14 +31,42 @@ $(document).ready(function() {
             var humidity = data.currently.humidity;
             $("#humidity").html("Humidity: <br/>" + humidity + "%");
             console.log(data.currently.summary);
+
+            var skycons = new Skycons({"color": "orange"});
+                  function weatherIcon(){
+                    if (icon === "clear-day") {
+                      skycons.add("icon1", Skycons.CLEAR_DAY);
+                    } else if (icon === "clear-night") {
+                      skycons.add("icon1", Skycons.CLEAR_NIGHT);
+                    } else if (icon === "rain") {
+                      skycons.add("icon1", Skycons.RAIN);
+                    } else if (icon === "snow") {
+                      skycons.add("icon1", Skycons.SNOW);
+                    } else if (icon === "sleet") {
+                      skycons.add("icon1", Skycons.SLEET);
+                    } else if (icon === "wind") {
+                      skycons.add("icon1", Skycons.WIND);
+                    } else if (icon === "fog") {
+                      skycons.add("icon1", Skycons.FOG);
+                    } else if (icon === "cloudy") {
+                      skycons.add("icon1", Skycons.CLOUDY);
+                    } else if (icon === "partly-cloudy-day") {
+                      skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+                    } else if (icon === "partly-cloudy-night") {
+                      skycons.add("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
+                    } else {
+                      console.log("Dark Sky icon did not return a matching case");
+                    }
+                    skycons.play();
+                  }
+                  weatherIcon();
             })
         }
         getData();
     }) // End json call
-
     
 
-    // Retrieve and render weather data
+
     
     // Unit conversion button
 
