@@ -7,9 +7,22 @@ body{
     font-family: 'Roboto', sans-serif;
     color: goldenrod;
     text-align:center;
+    
+    display: flex;
+    flex-wrap: wrap:
 }
 
 /* Header */
+header {
+    margin: 10px;
+    padding: 10px;
+    background: white;
+    max-width: 50vw;
+    box-shadow: 1px 1px 10px black;
+    transition: all 0.2s ease;  
+    
+    flex-basis: 100%;
+}
 h1 {
     font-family: 'Righteous', cursive;
     font-size: xx-large;
@@ -19,8 +32,44 @@ h2{
 }
 
 /* Summary */
+#summary {
+    margin: 10px;
+    padding: 10px;
+    background: white;
+    max-width: 50vw;
+    box-shadow: 1px 1px 10px black;
+    font-size: large;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, .8);
+    transition: all 0.2s ease;  
 
+    /* display: flex; */
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+#summary > * {
+    flex: 1 1 100%;
+}
+canvas {
+    display: inline-block;
+}
 /* Data */
+#data {
+    margin: 10px;
+    padding: 10px;
+    background: white;
+    max-width: 50vw;
+    box-shadow: 1px 1px 10px black;
+    font-size: large;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, .8);
+    transition: all 0.2s ease;   
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+#data > * {
+    flex: 1 1 100%;
+}
 button{
     background-color: white;
     border: 2px solid black;

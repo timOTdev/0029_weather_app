@@ -16,11 +16,10 @@ $(document).ready(function() {
             $.getJSON(weatherURL, function(data) {
               $("#conditions").html(data.currently.summary);
       
+              var icon = data.currently.icon;
+
               var tempF = Math.round(data.currently.temperature);
               $("#tempF").html("Current Temperature: <br/>" + tempF + "\xB0F");
-      
-              var icon = data.currently.icon;
-              $("#icon").html("Icon: <br/>");
       
               var windSpeed = data.currently.windSpeed;
               $("#windSpeed").html("Current Wind Speed: <br/>" + windSpeed + " mph");
