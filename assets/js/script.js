@@ -16,20 +16,23 @@ $(document).ready(function() {
             $.getJSON(weatherURL, function(data) {
               $("#conditions").html(data.currently.summary);
       
-              var icon = data.currently.icon;
+              var icon = data.currently.icon;         
 
               var tempF = Math.round(data.currently.temperature);
-              $("#tempF").html("Current Temperature: <br/>" + tempF + "\xB0F");
-      
-              var windSpeed = data.currently.windSpeed;
-              $("#windSpeed").html("Current Wind Speed: <br/>" + windSpeed + " mph");
+              $("#tempF").html(tempF + "\xB0F");
       
               var precipProbability = data.currently.precipProbability;
-              $("#precipProbability").html("Chance of Precipitation: <br/>" + precipProbability + "%");
-              
-              var humidity = data.currently.humidity;
-              $("#humidity").html("Humidity: <br/>" + humidity + "%");
-              console.log(data.currently.summary);
+              $("#precipProbability").html(precipProbability + "%");
+                          
+              console.log(tempF);
+              console.log(precipProbability);
+              console.log("break");
+              var sat = data.hourly.data[0];
+              var sun = data.hourly.data[1];
+              var mon = data.hourly.data[2];
+              console.log(sat);
+              console.log(sun);
+              console.log(mon);
 
               // Render weather icon
               var skycons = new Skycons({"color": "orange"});
@@ -64,14 +67,11 @@ $(document).ready(function() {
               // Unit conversion button
               function tempConversion() {
                 var tempC = Math.round((tempF - 32) * (5/9));
-                var windKPH = Math.round(windSpeed * 1.60934);
                 $("#convert").click(function() {
                   if ($("#tempF").is(":contains('\xB0F')")) {
                     $("#tempF").html("Current Temperature: <br/>" + tempC + "\xB0C");
-                    $("#windSpeed").html("Current Wind Speed: <br/>" + windKPH + " kph");
                   } else {
                     $("#tempF").html("Current Temperature: <br/>" + tempF + "\xB0F");
-                    $("#windSpeed").html("Current Wind Speed: <br/>" + windSpeed + " mph");
                   }
                 });
               }

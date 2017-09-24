@@ -7,36 +7,44 @@
 	<!-- jQuery -->
 	<script	src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Righteous" rel="stylesheet">
     <!-- Skycons -->
     <script src="https://rawgit.com/darkskyapp/skycons/master/skycons.js"></script>
 </head>
 <body>
     <div id="main">
         <header>
-            <h1>Local Weather App</h1>
-            <h2>Created by: Timothy Hoang (<a href="https://www.youtube.com/c/traveldev" target=_blank>travelDev</a>)</h2>
+            <h1>The Amazing Weather App</h1>            
+        </header>
+        
+        <div id="summary">
+            <div id="basic">
+                <p id="location"></p>                   
+                <p id="tempF"></p>
+                <p id="icon"></p>
+                <canvas id="icon1" width="220" height="220"></canvas>    
+                <p id="conditions"></p>
+                <p id="precipProbability"></p>
+            </div>
+            
+            <div id="two-day">
 
+            </div>
+
+            <div id="one-week">
+
+            </div>
+            <!-- <button id="convert">Change Units</button>   -->
+        </div>
+        
+        <footer>
+            <p>Created by: Timothy Hoang (<a href="https://www.youtube.com/c/traveldev" target=_blank>travelDev</a>)</p>
+                
             <p>Technologies deployed: JavaScript, jQuery, 
                 <a href="https://darksky.net/dev/" target=_blank>Dark Sky API</a>, 
                 <a href="https://darkskyapp.github.io/skycons/" target=_blank>Skycons</a>.
             </p>
-        </header>
-        
-        <div id="summary">
-            <p id="location"></p>   
-            <p id="icon"></p>
-            <canvas id="icon1" width="220" height="220"></canvas>    
-            <p id="conditions"></p>
-        </div>
-        
-        <div id="data">
-            <p id="tempF"></p>
-            <p id="windSpeed"></p>
-            <p id="precipProbability"></p>
-            <p id="humidity"></p>
-            <button id="convert">Change Units</button>  
-        </div>
+        </footer>
 
     </div> <!-- #main -->      
     <script type="text/javascript" src="assets/js/script.js"></script>
