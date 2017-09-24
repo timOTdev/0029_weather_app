@@ -13,21 +13,33 @@ $(document).ready(function() {
         // Make call to Dark Sky API
         function getData() {        
             // Render weather data
-            $.getJSON(weatherURL, function(data) {
-              $("#conditions").html(data.currently.summary);
-      
-              var tempF = Math.round(data.currently.temperature);
-              $("#tempF").html(tempF + "\xB0F");
-              
+            $.getJSON(weatherURL, function(data) {                   
+              // Get temperature
+              var nowTemp = Math.round(data.currently.temperature);
+              var twelveTemp = Math.round(data.hourly.data[11].temperature);
+              var twentyFourTemp = Math.round(data.hourly.data[23].temperature);
+              var thirtySixTemp = Math.round(data.hourly.data[35].temperature);
+              var fourtyEightTemp = Math.round(data.hourly.data[48].temperature);
+              $("#now-tempF").html(nowTemp + "\xB0F");              
+              $("#12hr-tempF").html(twelveTemp + "\xB0F");              
+              $("#24hr-tempF").html(twentyFourTemp + "\xB0F");              
+              $("#36hr-tempF").html(thirtySixTemp+ "\xB0F");              
+              $("#48hr-tempF").html(fourtyEightTemp + "\xB0F");
+
+              // Get condition              
+              $("#now-conditions").html(data.currently.summary);
+              $("#12hr-conditions").html(data.hourly.data[11].summary);
+              $("#24hr-conditions").html(data.hourly.data[23].summary);
+              $("#36hr-conditions").html(data.hourly.data[35].summary);
+              $("#48hr-conditions").html(data.hourly.data[48].summary);
+
+              // Get icon
               var now = data.currently.icon;  
-              var six = data.hourly.data[5].icon;
               var twelve = data.hourly.data[11].icon;
-              var eighteen = data.hourly.data[17].icon;
               var twentyFour = data.hourly.data[23].icon;
-              var thirty = data.hourly.data[29].icon;
               var thirtySix = data.hourly.data[35].icon;
-              var fourtyTwo = data.hourly.data[41].icon;
               var fourtyEight = data.hourly.data[47].icon;
+
               var skycons = new Skycons({"color": "orange"});
               function weatherIcon(){
                 if (now === "clear-day") {
@@ -149,36 +161,31 @@ $(document).ready(function() {
                 } else {
                   console.log("Dark Sky icon did not return a matching case");
                 }
-
                 skycons.play();
               }
-
               weatherIcon();
 
               var rain = data.currently.precipProbability;
               $("#rain").html(rain + "%");
-
-              // Get data for two day forecast
-              $("#12hr-tempF").html(Math.round(data.hourly.data[11].temperature) + "\xB0F");
-              $("#12hr-conditions").html(data.hourly.data[11].summary);
-
-              $("#24hr-tempF").html(Math.round(data.hourly.data[23].temperature) + "\xB0F");
-              $("#24hr-conditions").html(data.hourly.data[23].summary);
-
-              $("#36hr-tempF").html(Math.round(data.hourly.data[35].temperature) + "\xB0F");
-              $("#36hr-conditions").html(data.hourly.data[35].summary);
-
-              $("#48hr-tempF").html(Math.round(data.hourly.data[48].temperature) + "\xB0F");
-              $("#48hr-conditions").html(data.hourly.data[48].summary);
-              
+                          
               // Unit conversion button
+              function convertToCelsius(temp) {                
+                return Math.round((temp - 32) * (5/9));
+              }
               function tempConversion() {
-                var tempC = Math.round((tempF - 32) * (5/9));
                 $("#convert").click(function() {
-                  if ($("#tempF").is(":contains('\xB0F')")) {
-                    $("#tempF").html("Current Temperature: <br/>" + tempC + "\xB0C");
+                  if ($("#now-tempF").is(":contains('\xB0F')")) {
+                    $("#now-tempF").html(convertToCelsius(nowTemp) + "\xB0C");
+                    $("#12hr-tempF").html(convertToCelsius(twelveTemp) + "\xB0C");
+                    $("#24hr-tempF").html(convertToCelsius(twentyFourTemp) + "\xB0C");
+                    $("#36hr-tempF").html(convertToCelsius(thirtySixTemp) + "\xB0C");
+                    $("#48hr-tempF").html(convertToCelsius(fourtyEightTemp) + "\xB0C");
                   } else {
-                    $("#tempF").html("Current Temperature: <br/>" + tempF + "\xB0F");
+                    $("#now-tempF").html(nowTemp + "\xB0F");
+                    $("#12hr-tempF").html(twelveTemp + "\xB0F");
+                    $("#24hr-tempF").html(twentyFourTemp + "\xB0F");
+                    $("#36hr-tempF").html(thirtySixTemp + "\xB0F");
+                    $("#48hr-tempF").html(fourtyEightTemp + "\xB0F");
                   }
                 });
               }
