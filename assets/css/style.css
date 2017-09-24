@@ -5,7 +5,7 @@ body{
 #main{
     color: goldenrod;
     text-align: center;
-    font-family: 'Roboto', sans-serif;    
+    font-family: 'Roboto', sans-serif;   
     
     display: flex;
     flex-wrap: wrap;
@@ -25,8 +25,7 @@ h1 {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, .8);    
 }
 h2{
-    font-size: large;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, .8);    
+    font-size: large;  
 }
 
 /* Summary */
@@ -34,19 +33,24 @@ h2{
     margin: 10px;
     padding: 10px;
     border: 1px solid red;
+    background: white;     
 
     flex: 1 1 100%;
+}
+#two-day {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Footer */
 footer {    
-
     display: flex;
     justify-content: space-around;
     flex: 1 1 100%;
 }
 
 footer> * {
+    background: white;
     border: 1px solid red;
 }
 

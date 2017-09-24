@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> The Amazing Weather App by Timothy Hoang (travelDev)</title>
+	<title> The Wonderful Weather App by Timothy Hoang (travelDev)</title>
 	<!-- Local Files -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!-- jQuery -->
@@ -14,27 +14,54 @@
 <body>
     <div id="main">
         <header>
-            <h1>The Amazing Weather App</h1>            
+            <h1>The Wonderful Weather App</h1>            
         </header>
         
         <div id="summary">
-            <div id="basic">
-                <p id="location"></p>                   
-                <p id="tempF"></p>
-                <p id="icon"></p>
-                <canvas id="icon1" width="220" height="220"></canvas>    
-                <p id="conditions"></p>
-                <p id="precipProbability"></p>
-            </div>
-            
-            <div id="two-day">
+            <div id="data">
+                <div id="now">
+                    <p id="location"></p>                   
+                    <p id="tempF"></p>
+                    <!-- <p id="icon"></p> -->
+                    <canvas id="now-icon" width="220" height="220"></canvas>    
+                    <p id="conditions"></p>
+                    <p id="rain"></p>
+                </div>
+                
+                
+                <h2>The Next 48 hours:</h2>
+                <div id="two-day">
+                    <div id="12hr">
+                        <h2>12 hours</h2>
+                        <p id="12hr-tempF"></p>                     
+                        <canvas id="12hr-icon" width="100" height="100"></canvas>                      
+                        <p id="12hr-conditions"></p>
+                    </div>
+                    <div id="24hr">
+                        <h2>24 hours</h2>
+                        <p id="24hr-tempF"></p>                     
+                        <canvas id="24hr-icon" width="100" height="100"></canvas>                      
+                        <p id="24hr-conditions"></p>
+                    </div>
+                    <div id="36hr">
+                        <h2>36 hours</h2>
+                        <p id="36hr-tempF"></p>                     
+                        <canvas id="36hr-icon" width="100" height="100"></canvas>                      
+                        <p id="36hr-conditions"></p>
+                    </div>
+                    <div id="48hr">
+                        <h2>48 hours</h2>
+                        <p id="48hr-tempF"></p>                     
+                        <canvas id="48hr-icon" width="100" height="100"></canvas>                      
+                        <p id="48hr-conditions"></p>
+                    </div>
+                </div>
 
-            </div>
+                <div id="one-week">
 
-            <div id="one-week">
-
+                </div>
             </div>
-            <!-- <button id="convert">Change Units</button>   -->
+            <button id="convert">Change Units</button>  
         </div>
         
         <footer>
