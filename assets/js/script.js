@@ -19,7 +19,7 @@ $(document).ready(function() {
               var twelveTemp = Math.round(data.hourly.data[11].temperature);
               var twentyFourTemp = Math.round(data.hourly.data[23].temperature);
               var thirtySixTemp = Math.round(data.hourly.data[35].temperature);
-              var fourtyEightTemp = Math.round(data.hourly.data[48].temperature);
+              var fourtyEightTemp = Math.round(data.hourly.data[47].temperature);
               $("#now-tempF").html(nowTemp + "\xB0F");              
               $("#12hr-tempF").html(twelveTemp + "\xB0F");              
               $("#24hr-tempF").html(twentyFourTemp + "\xB0F");              
@@ -31,8 +31,18 @@ $(document).ready(function() {
               $("#12hr-conditions").html(data.hourly.data[11].summary);
               $("#24hr-conditions").html(data.hourly.data[23].summary);
               $("#36hr-conditions").html(data.hourly.data[35].summary);
-              $("#48hr-conditions").html(data.hourly.data[48].summary);
+              $("#48hr-conditions").html(data.hourly.data[47].summary);
 
+              // Unix Time Conversion
+              var twelveTime = new Date(data.hourly.data[11].time * 1000);
+              var twentyFourTime = new Date(data.hourly.data[23].time * 1000);
+              var thirySixTime = new Date(data.hourly.data[35].time * 1000);
+              var fourtyEightTime = new Date(data.hourly.data[47].time * 1000);
+              $("#twelveTime").html(twelveTime.toLocaleString([], {weekday: 'long', hour: '2-digit', minute:'2-digit'}));
+              $("#twentyFourTime").html(twentyFourTime.toLocaleString([], {weekday: 'long', hour: '2-digit', minute:'2-digit'}));
+              $("#thirtySixTime").html(thirySixTime.toLocaleString([], {weekday: 'long', hour: '2-digit', minute:'2-digit'}));
+              $("#fourtyEightTime").html(fourtyEightTime.toLocaleString([], {weekday: 'long', hour: '2-digit', minute:'2-digit'}));
+              
               // Get icon
               var now = data.currently.icon;  
               var twelve = data.hourly.data[11].icon;
@@ -167,8 +177,8 @@ $(document).ready(function() {
 
               var rain = data.currently.precipProbability;
               $("#rain").html(rain + "%");
-                          
-              // Unit conversion button
+              
+              // Temperature Unit conversion 
               function convertToCelsius(temp) {                
                 return Math.round((temp - 32) * (5/9));
               }
