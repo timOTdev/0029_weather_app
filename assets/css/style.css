@@ -41,6 +41,10 @@ h2{
     display: flex;
     justify-content: space-around;
 }
+#one-week {
+    display: flex;
+    justify-content: space-around;
+}
 
 /* Footer */
 footer {    
