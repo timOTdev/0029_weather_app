@@ -86,12 +86,12 @@ h3 {
     font-size:1.200em;
     text-shadow:0px 1px 0px #1a1a1a;
     color:#fff;
+    text-decoration: none;
 }
  
 .accordion-section-title.active, .accordion-section-title:hover {
     background:#4c4c4c;
     /* Type */
-    text-decoration:none;
 }
  
 .accordion-section:last-child .accordion-section-title {
