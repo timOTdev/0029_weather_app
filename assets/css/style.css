@@ -4,6 +4,7 @@ body{
 }
 #main{
     color: goldenrod;
+    font-size: medium;
     text-align: center;
     font-family: 'Roboto', sans-serif;   
     
@@ -14,37 +15,32 @@ body{
 
 /* Header */
 header {
-    margin: 10px;
-    padding: 10px;
-
     flex: 1 1 100%;
 }
 h1 {
     font-family: 'Righteous', cursive;
     font-size: xx-large;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, .8);    
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;   
 }
-h2{
+h2 {
     font-size: large;  
 }
-.raised {    
-    color: #fff;
-	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
-	font: 30px 'ChunkFiveRegular';
+h3 {
+    font-size: medium;
 }
 
 /* Summary */
 #summary {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid red;
-    background: white;     
-
     flex: 1 1 100%;
 }
+
 #now-tempF {
     display: inline-block;
-    font-size: 3em;
+    font-size: 2em;
     transition: all 1s ease;
 }
 #now-tempF:hover {
@@ -64,15 +60,63 @@ h2{
     justify-content: space-around;
 }
 
+/*----- Accordion -----*/
+.accordion, .accordion * {
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
+}
+ 
+.accordion {
+    overflow:hidden;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+    border-radius:3px;
+    color:#fff;
+}
+
+/*----- Section Titles -----*/
+.accordion-section-title {
+    width:100%;
+    padding:15px;
+    display:inline-block;
+    border-bottom:1px solid #1a1a1a;
+    background:#333;
+    transition:all linear 0.15s;
+    /* Type */
+    font-size:1.200em;
+    text-shadow:0px 1px 0px #1a1a1a;
+    color:#fff;
+}
+ 
+.accordion-section-title.active, .accordion-section-title:hover {
+    background:#4c4c4c;
+    /* Type */
+    text-decoration:none;
+}
+ 
+.accordion-section:last-child .accordion-section-title {
+    border-bottom:none;
+}
+ 
+/*----- Section Content -----*/
+.accordion-section-content {
+    padding:15px;
+    display:none;
+    background: black;
+}
+
 /* Footer */
 footer {    
+    font-size: large;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;   
+
     display: flex;
     justify-content: space-around;
     flex: 1 1 100%;
-}
-
-footer> * {
-    background: white;
-    border: 1px solid red;
 }
 

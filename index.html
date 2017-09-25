@@ -18,84 +18,98 @@
         </header>
         
         <section id="summary">
-            <div id="data">
-                <div id="now">
-                    <p id="location"></p>                   
-                    <span id="convert"><p id="now-tempF" class="raised"></p></span>
-                    <canvas id="now-icon" width="220" height="220"></canvas>    
-                    <p id="now-conditions"></p>
-                    <p id="rain"></p>
-                </div>
+            <div class="accordion">
+                <div class="accordion-section">
+                    <a class="accordion-section-title" href="#accordion-0"><h3>Currently:</h3></a>
+                    <div class="accordion-section-content" id="accordion-0">
+                        <div id="data">
+                            <div id="now">
+                                <p id="location"></p>                   
+                                <span id="convert"><p id="now-tempF" class="raise"></p></span>
+                                <canvas id="now-icon" width="100" height="100"></canvas>    
+                                <p id="now-conditions"></p>
+                                <p id="rain"></p>
+                            </div> <!--end #now-->
+                        </div> <!--end #data-->
+                    </div> <!--end .accordion-section-content-->
+                </div> <!--end .accordion-section-->
 
-                <h2>The Next 48 hours:</h2>
-                <div id="two-day">
-                    <div id="12hr">
-                        <h2 id="twelveTime"></h2>
-                        <p id="12hr-tempF"></p>                     
-                        <canvas id="12hr-icon" width="100" height="100"></canvas>                      
-                        <p id="12hr-conditions"></p>
-                    </div>
-                    <div id="24hr">
-                        <h2 id="twentyFourTime"></h2>
-                        <p id="24hr-tempF"></p>                     
-                        <canvas id="24hr-icon" width="100" height="100"></canvas>                      
-                        <p id="24hr-conditions"></p>
-                    </div>
-                    <div id="36hr">
-                        <h2 id="thirtySixTime"></h2>
-                        <p id="36hr-tempF"></p>                     
-                        <canvas id="36hr-icon" width="100" height="100"></canvas>                      
-                        <p id="36hr-conditions"></p>
-                    </div>
-                    <div id="48hr">
-                        <h2 id="fourtyEightTime"></h2>
-                        <p id="48hr-tempF"></p>                     
-                        <canvas id="48hr-icon" width="100" height="100"></canvas>                      
-                        <p id="48hr-conditions"></p>
-                    </div>
-                </div>
+                <div class="accordion-section">
+                    <a class="accordion-section-title" href="#accordion-1"><h3>The Next 48 Hours:</h3></a>
+                    <div class="accordion-section-content" id="accordion-1">
+                        <div id="two-day">
+                            <div id="12hr">
+                                <h2 id="twelveTime"></h2>
+                                <p id="12hr-tempF" class="raise"></p>                     
+                                <canvas id="12hr-icon" width="75" height="75"></canvas>                      
+                                <p id="12hr-conditions"></p>
+                            </div>
+                            <div id="24hr">
+                                <h2 id="twentyFourTime"></h2>
+                                <p id="24hr-tempF"></p>                     
+                                <canvas id="24hr-icon" width="75" height="75"></canvas>                      
+                                <p id="24hr-conditions"></p>
+                            </div>
+                            <div id="36hr">
+                                <h2 id="thirtySixTime"></h2>
+                                <p id="36hr-tempF"></p>                     
+                                <canvas id="36hr-icon" width="75" height="75"></canvas>                      
+                                <p id="36hr-conditions"></p>
+                            </div>
+                            <div id="48hr">
+                                <h2 id="fourtyEightTime"></h2>
+                                <p id="48hr-tempF"></p>                     
+                                <canvas id="48hr-icon" width="75" height="75"></canvas>                      
+                                <p id="48hr-conditions"></p>
+                            </div> <!--end #48hr-->
+                        </div> <!--end #two-day-->
+                    </div> <!--end .accordion-section-content-->
+                </div> <!--end .accordion-section-->
 
-                <h2>The Next 7 Days:</h2>
-                <div id="one-week">`
-                    <div id="day1">
-                        <h2 id="day1-time"></h2>
-                        <p id="day1-tempF"></p>
-                        <canvas id="day1-icon" width="100" height="100"></canvas>
-                        <p id="day1-conditions"></p>
-                    </div>
-                    <div id="day2">
-                        <h2 id="day2-time"></h2>
-                        <p id="day2-tempF"></p>
-                        <canvas id="day2-icon" width="100" height="100"></canvas>
-                        <p id="day2-conditions"></p></div>
-                    <div id="day3">
-                        <h2 id="day3-time"></h2>
-                        <p id="day3-tempF"></p>
-                        <canvas id="day3-icon" width="100" height="100"></canvas>
-                        <p id="day3-conditions"></p></div>
-                    <div id="day4">
-                        <h2 id="day4-time"></h2>
-                        <p id="day4-tempF"></p>
-                        <canvas id="day4-icon" width="100" height="100"></canvas>
-                        <p id="day4-conditions"></p></div>
-                    <div id="day5">
-                        <h2 id="day5-time"></h2>
-                        <p id="day5-tempF"></p>
-                        <canvas id="day5-icon" width="100" height="100"></canvas>
-                        <p id="day5-conditions"></p></div>
-                    <div id="day6">
-                        <h2 id="day6-time"></h2>
-                        <p id="day6-tempF"></p>
-                        <canvas id="day6-icon" width="100" height="100"></canvas>
-                        <p id="day6-conditions"></p></div>
-                    <div id="day7">
-                        <h2 id="day7-time"></h2>
-                        <p id="day7-tempF"></p>
-                        <canvas id="day7-icon" width="100" height="100"></canvas>
-                        <p id="day7-conditions"></p></div>
-                </div>
-            </div>
-        </section>
+                <a class="accordion-section-title" href="#accordion-2"><h3>The Next 7 Days:</h3></a>
+                <div id="accordion-2" class="accordion-section-content">
+                    <div id="one-week">`
+                        <div id="day1">
+                            <h2 id="day1-time"></h2>
+                            <p id="day1-tempF"></p>
+                            <canvas id="day1-icon" width="75" height="75"></canvas>
+                            <p id="day1-conditions"></p>
+                        </div>
+                        <div id="day2">
+                            <h2 id="day2-time"></h2>
+                            <p id="day2-tempF"></p>
+                            <canvas id="day2-icon" width="75" height="75"></canvas>
+                            <p id="day2-conditions"></p></div>
+                        <div id="day3">
+                            <h2 id="day3-time"></h2>
+                            <p id="day3-tempF"></p>
+                            <canvas id="day3-icon" width="75" height="75"></canvas>
+                            <p id="day3-conditions"></p></div>
+                        <div id="day4">
+                            <h2 id="day4-time"></h2>
+                            <p id="day4-tempF"></p>
+                            <canvas id="day4-icon" width="75" height="75"></canvas>
+                            <p id="day4-conditions"></p></div>
+                        <div id="day5">
+                            <h2 id="day5-time"></h2>
+                            <p id="day5-tempF"></p>
+                            <canvas id="day5-icon" width="75" height="75"></canvas>
+                            <p id="day5-conditions"></p></div>
+                        <div id="day6">
+                            <h2 id="day6-time"></h2>
+                            <p id="day6-tempF"></p>
+                            <canvas id="day6-icon" width="75" height="75"></canvas>
+                            <p id="day6-conditions"></p></div>
+                        <div id="day7">
+                            <h2 id="day7-time"></h2>
+                            <p id="day7-tempF"></p>
+                            <canvas id="day7-icon" width="75" height="75"></canvas>
+                            <p id="day7-conditions"></p>
+                        </div> <!--end #day7-->
+                    </div> <!--end #one-week-->
+                </div> <!--end .accordion-section-content-->
+            </div> <!--end .accordion-section-->
+        </section> <!--end #summary-->
         
         <footer>
             <p>Created by: Timothy Hoang (<a href="https://www.youtube.com/c/traveldev" target=_blank>travelDev</a>)</p>
@@ -104,10 +118,10 @@
                 <a href="https://darksky.net/dev/" target=_blank>Dark Sky API</a>, 
                 <a href="https://darkskyapp.github.io/skycons/" target=_blank>Skycons</a>.
             </p>
-        </footer>
+        </footer> <!--end footer-->
 
-    </div> <!-- #main -->      
+    </div> <!--end #main-->      
     <script type="text/javascript" src="assets/js/script.js"></script>
-</body>
-</html>              
+</body> <!--end body-->
+</html> <!--end html-->
               

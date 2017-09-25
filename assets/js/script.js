@@ -1,4 +1,28 @@
 $(document).ready(function() {
+  // Accordion
+  function close_accordion_section() {
+    $('.accordion .accordion-section-title').removeClass('active');
+    $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+  }
+
+  $('.accordion-section-title').click(function(e) {
+      // Grab current anchor value
+      var currentAttrValue = $(this).attr('href');
+
+      if($(e.target).is('.active')) {
+          close_accordion_section();
+      } else {
+          close_accordion_section();
+
+          // Add active class to section title
+          $(this).addClass('active');
+          // Open up the hidden content panel
+          $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+      }
+
+      e.preventDefault();
+  });
+
     // Get city, state, latitude, and longitude
     // Form query string to send to Dark Sky
     $.getJSON("https://ipinfo.io/", function(response) {
@@ -431,8 +455,8 @@ $(document).ready(function() {
 
               var rain = data.currently.precipProbability;
               $("#rain").html(rain + "%");            
-            }) //End darksky call
-        } // End getData function
+            }) //end darksky call
+        } //end getData function
         getData();
-    }) // End ipinfo call 
-}) // End doc ready
+    }) //end ipinfo call 
+}) //end doc ready
