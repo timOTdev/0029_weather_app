@@ -47,6 +47,43 @@ $(document).ready(function() {
               $("#day6-tempF").html(day6TempMin + "\xB0 / " + day6TempMax + "\xB0");
               $("#day7-tempF").html(day7TempMin + "\xB0 / " + day7TempMax + "\xB0");
               
+              // Temperature Unit conversion 
+              function convertToCelsius(temp) {                
+                return Math.round((temp - 32) * (5/9));
+              }
+              function tempConversion() {
+                $("#convert").click(function() {
+                  if ($("#now-tempF").is(":contains('\xB0F')")) {
+                    $("#now-tempF").html(convertToCelsius(nowTemp) + "\xB0C");
+                    $("#12hr-tempF").html(convertToCelsius(twelveTemp) + "\xB0C");
+                    $("#24hr-tempF").html(convertToCelsius(twentyFourTemp) + "\xB0C");
+                    $("#36hr-tempF").html(convertToCelsius(thirtySixTemp) + "\xB0C");
+                    $("#48hr-tempF").html(convertToCelsius(fourtyEightTemp) + "\xB0C");
+                    $("#day1-tempF").html(convertToCelsius(day1TempMin) + "\xB0 / " + convertToCelsius(day1TempMax) + "\xB0");
+                    $("#day2-tempF").html(convertToCelsius(day2TempMin) + "\xB0 / " + convertToCelsius(day2TempMax) + "\xB0");
+                    $("#day3-tempF").html(convertToCelsius(day3TempMin) + "\xB0 / " + convertToCelsius(day3TempMax) + "\xB0");
+                    $("#day4-tempF").html(convertToCelsius(day4TempMin) + "\xB0 / " + convertToCelsius(day4TempMax) + "\xB0");
+                    $("#day5-tempF").html(convertToCelsius(day5TempMin) + "\xB0 / " + convertToCelsius(day5TempMax) + "\xB0");
+                    $("#day6-tempF").html(convertToCelsius(day6TempMin) + "\xB0 / " + convertToCelsius(day6TempMax) + "\xB0");
+                    $("#day7-tempF").html(convertToCelsius(day7TempMin) + "\xB0 / " + convertToCelsius(day7TempMax) + "\xB0");
+                  } else {
+                    $("#now-tempF").html(nowTemp + "\xB0F");
+                    $("#12hr-tempF").html(twelveTemp + "\xB0F");
+                    $("#24hr-tempF").html(twentyFourTemp + "\xB0F");
+                    $("#36hr-tempF").html(thirtySixTemp + "\xB0F");
+                    $("#48hr-tempF").html(fourtyEightTemp + "\xB0F");
+                    $("#day1-tempF").html(day1TempMin + "\xB0 / " + day1TempMax + "\xB0");
+                    $("#day2-tempF").html(day2TempMin + "\xB0 / " + day2TempMax + "\xB0");
+                    $("#day3-tempF").html(day3TempMin + "\xB0 / " + day3TempMax + "\xB0");
+                    $("#day4-tempF").html(day4TempMin + "\xB0 / " + day4TempMax + "\xB0");
+                    $("#day5-tempF").html(day5TempMin + "\xB0 / " + day5TempMax + "\xB0");
+                    $("#day6-tempF").html(day6TempMin + "\xB0 / " + day6TempMax + "\xB0");
+                    $("#day7-tempF").html(day7TempMin + "\xB0 / " + day7TempMax + "\xB0");
+                  }
+                })
+              }
+              tempConversion();
+
               // Get condition              
               $("#now-conditions").html(data.currently.summary);
               $("#12hr-conditions").html(data.hourly.data[11].summary);
@@ -388,38 +425,14 @@ $(document).ready(function() {
                 } else {
                   console.log("Dark Sky icon did not return a matching case");
                 }
-
                 skycons.play();
               }
               weatherIcon();
 
               var rain = data.currently.precipProbability;
-              $("#rain").html(rain + "%");
-              
-              // Temperature Unit conversion 
-              function convertToCelsius(temp) {                
-                return Math.round((temp - 32) * (5/9));
-              }
-              function tempConversion() {
-                $("#convert").click(function() {
-                  if ($("#now-tempF").is(":contains('\xB0F')")) {
-                    $("#now-tempF").html(convertToCelsius(nowTemp) + "\xB0C");
-                    $("#12hr-tempF").html(convertToCelsius(twelveTemp) + "\xB0C");
-                    $("#24hr-tempF").html(convertToCelsius(twentyFourTemp) + "\xB0C");
-                    $("#36hr-tempF").html(convertToCelsius(thirtySixTemp) + "\xB0C");
-                    $("#48hr-tempF").html(convertToCelsius(fourtyEightTemp) + "\xB0C");
-                  } else {
-                    $("#now-tempF").html(nowTemp + "\xB0F");
-                    $("#12hr-tempF").html(twelveTemp + "\xB0F");
-                    $("#24hr-tempF").html(twentyFourTemp + "\xB0F");
-                    $("#36hr-tempF").html(thirtySixTemp + "\xB0F");
-                    $("#48hr-tempF").html(fourtyEightTemp + "\xB0F");
-                  }
-                });
-              }
-              tempConversion();
-              })
+              $("#rain").html(rain + "%");            
+            }) //End darksky call
         } // End getData function
         getData();
-    }) // End json call
+    }) // End ipinfo call 
 }) // End doc ready
