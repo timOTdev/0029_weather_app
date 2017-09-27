@@ -4,7 +4,7 @@ body{
 }
 #main{
     color: goldenrod;
-    font-size: medium;
+    font-size: xx-large;
     text-align: center;
     font-family: 'Roboto', sans-serif;   
     
@@ -12,14 +12,16 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
+a:visited, a:link {
+    color: white;
+}
 /* Header */
 header {
     flex: 1 1 100%;
 }
 h1 {
     font-family: 'Righteous', cursive;
-    font-size: xx-large;
+    font-size: 1.5em;
     text-shadow:
    -1px -1px 0 #000,  
     1px -1px 0 #000,
@@ -27,29 +29,32 @@ h1 {
     1px 1px 0 #000;   
 }
 h2 {
-    font-size: large;  
+    font-size: 1.2em;  
 }
 h3 {
-    font-size: medium;
+    font-size: 0.5em;
 }
 
 /* Summary */
 #summary {
     flex: 1 1 100%;
 }
-
 #now-tempF {
     display: inline-block;
     font-size: 2em;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 #now-tempF:hover {
-    color: black;
+    color: blue;
+    cursor: pointer;
     transform: scale(1.05);
 }
 #now-icon {
     display: block;
     margin: 0 auto;
+}
+#rain {
+    background: 
 }
 #two-day {
     display: flex;
@@ -68,40 +73,44 @@ h3 {
 }
  
 .accordion {
-    overflow:hidden;
-    box-shadow:0px 1px 3px rgba(0,0,0,0.25);
-    border-radius:3px;
-    color:#fff;
+    overflow: hidden;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+    border-radius: 30px;
+    color: #fff;    
+}
+
+#accordion-1 {
+    display: block;
 }
 
 /*----- Section Titles -----*/
 .accordion-section-title {
-    width:100%;
-    padding:15px;
-    display:inline-block;
-    border-bottom:1px solid #1a1a1a;
-    background:#333;
-    transition:all linear 0.15s;
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    border-bottom: 1px solid #1a1a1a;
+    background: #333;
+    transition: all linear 0.15s;
     /* Type */
-    font-size:1.200em;
-    text-shadow:0px 1px 0px #1a1a1a;
-    color:#fff;
+    font-size: 1.200em;
+    text-shadow: 0px 1px 0px #1a1a1a;
+    color: #fff;
     text-decoration: none;
 }
  
 .accordion-section-title.active, .accordion-section-title:hover {
-    background:#4c4c4c;
+    background: #4c4c4c;
     /* Type */
 }
  
 .accordion-section:last-child .accordion-section-title {
-    border-bottom:none;
+    border-bottom: none;
 }
  
 /*----- Section Content -----*/
 .accordion-section-content {
-    padding:15px;
-    display:none;
+    padding: 15px;
+    display: none;
     background: black;
 }
 
