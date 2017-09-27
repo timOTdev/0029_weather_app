@@ -4,7 +4,7 @@ body{
 }
 #main{
     color: goldenrod;
-    font-size: xx-large;
+    font-size: 1.4em;
     text-align: center;
     font-family: 'Roboto', sans-serif;   
     
@@ -13,7 +13,7 @@ body{
     justify-content: space-between;
 }
 a:visited, a:link {
-    color: white;
+    color: goldenrod;
 }
 /* Header */
 header {
@@ -21,18 +21,19 @@ header {
 }
 h1 {
     font-family: 'Righteous', cursive;
-    font-size: 1.5em;
-    text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-   -1px 1px 0 #000,
-    1px 1px 0 #000;   
+    font-size: 3em;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000, 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+	color: goldenrod;
 }
 h2 {
     font-size: 1.2em;  
 }
 h3 {
-    font-size: 0.5em;
+    font-size: 1em;
 }
 
 /* Summary */
@@ -43,6 +44,8 @@ h3 {
     display: inline-block;
     font-size: 2em;
     transition: all 0.5s ease;
+    margin: 5px;
+    border: 5px;
 }
 #now-tempF:hover {
     color: blue;
@@ -117,7 +120,7 @@ h3 {
 /* Footer */
 footer {    
     font-size: large;
-    color: white;
+    color: goldenrod;
     text-shadow:
     -1px -1px 0 #000,  
      1px -1px 0 #000,
