@@ -160,8 +160,14 @@ $(document).ready(function() {
               var day6Icon = data.daily.data[6].icon;
               var day7Icon = data.daily.data[7].icon;
               
+              // skyconRain.add(document.getElementById("rain-icon"), Skycons.RAIN);
+              
+              var skyconRain = new Skycons({"color": "blue"});
               var skycons = new Skycons({"color": "orange"});
               function weatherIcon(){
+                skyconRain.add(document.getElementById("rain-icon"), Skycons.SLEET);
+                skyconRain.play();
+
                 if (now === "clear-day") {
                   skycons.add("now-icon", Skycons.CLEAR_DAY);
                 } else if (now === "clear-night") {
