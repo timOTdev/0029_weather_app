@@ -160,8 +160,6 @@ $(document).ready(function() {
               var day6Icon = data.daily.data[6].icon;
               var day7Icon = data.daily.data[7].icon;
               
-              // skyconRain.add(document.getElementById("rain-icon"), Skycons.RAIN);
-              
               var skyconRain = new Skycons({"color": "blue"});
               var skycons = new Skycons({"color": "orange"});
               function weatherIcon(){
@@ -433,7 +431,7 @@ $(document).ready(function() {
                 }
                 
                 if (day7Icon === "clear-day") {
-                  skycons.add("day1-icon", Skycons.CLEAR_DAY);
+                  skycons.add("day7-icon", Skycons.CLEAR_DAY);
                 } else if (day7Icon === "clear-night") {
                   skycons.add("day7-icon", Skycons.CLEAR_NIGHT);
                 } else if (day7Icon === "rain") {
