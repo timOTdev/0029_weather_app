@@ -162,300 +162,49 @@ $(document).ready(function() {
             
             var skyconRain = new Skycons({"color": "blue"});
             var skycons = new Skycons({"color": "orange"});
-            function weatherIcon(){
+
+            function weatherIcon(condition, icon){
               skyconRain.add(document.getElementById("rain-icon"), Skycons.SLEET);
               skyconRain.play();
 
-              if (now === "clear-day") {
-                skycons.add("now-icon", Skycons.CLEAR_DAY);
-              } else if (now === "clear-night") {
-                skycons.add("now-icon", Skycons.CLEAR_NIGHT);
-              } else if (now === "rain") {
-                skycons.add("now-icon", Skycons.RAIN);
-              } else if (now === "snow") {
-                skycons.add("now-icon", Skycons.SNOW);
-              } else if (now === "sleet") {
-                skycons.add("now-icon", Skycons.SLEET);
-              } else if (now === "wind") {
-                skycons.add("now-icon", Skycons.WIND);
-              } else if (now === "fog") {
-                skycons.add("now-icon", Skycons.FOG);
-              } else if (now === "cloudy") {
-                skycons.add("now-icon", Skycons.CLOUDY);
-              } else if (now === "partly-cloudy-day") {
-                skycons.add("now-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (now === "partly-cloudy-night") {
-                skycons.add("now-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (twelve === "clear-day") {
-                skycons.add("12hr-icon", Skycons.CLEAR_DAY);
-              } else if (twelve === "clear-night") {
-                skycons.add("12hr-icon", Skycons.CLEAR_NIGHT);
-              } else if (twelve === "rain") {
-                skycons.add("12hr-icon", Skycons.RAIN);
-              } else if (twelve === "snow") {
-                skycons.add("12hr-icon", Skycons.SNOW);
-              } else if (twelve === "sleet") {
-                skycons.add("12hr-icon", Skycons.SLEET);
-              } else if (twelve === "wind") {
-                skycons.add("12hr-icon", Skycons.WIND);
-              } else if (twelve === "fog") {
-                skycons.add("12hr-icon", Skycons.FOG);
-              } else if (twelve === "cloudy") {
-                skycons.add("12hr-icon", Skycons.CLOUDY);
-              } else if (twelve === "partly-cloudy-day") {
-                skycons.add("12hr-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (twelve === "partly-cloudy-night") {
-                skycons.add("12hr-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (twentyFour === "clear-day") {
-                skycons.add("24hr-icon", Skycons.CLEAR_DAY);
-              } else if (twentyFour === "clear-night") {
-                skycons.add("24hr-icon", Skycons.CLEAR_NIGHT);
-              } else if (twentyFour === "rain") {
-                skycons.add("24hr-icon", Skycons.RAIN);
-              } else if (twentyFour === "snow") {
-                skycons.add("24hr-icon", Skycons.SNOW);
-              } else if (twentyFour === "sleet") {
-                skycons.add("24hr-icon", Skycons.SLEET);
-              } else if (twentyFour === "wind") {
-                skycons.add("24hr-icon", Skycons.WIND);
-              } else if (twentyFour === "fog") {
-                skycons.add("24hr-icon", Skycons.FOG);
-              } else if (twentyFour === "cloudy") {
-                skycons.add("24hr-icon", Skycons.CLOUDY);
-              } else if (twentyFour === "partly-cloudy-day") {
-                skycons.add("24hr-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (twentyFour === "partly-cloudy-night") {
-                skycons.add("24hr-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (thirtySix === "clear-day") {
-                skycons.add("36hr-icon", Skycons.CLEAR_DAY);
-              } else if (thirtySix === "clear-night") {
-                skycons.add("36hr-icon", Skycons.CLEAR_NIGHT);
-              } else if (thirtySix === "rain") {
-                skycons.add("36hr-icon", Skycons.RAIN);
-              } else if (thirtySix === "snow") {
-                skycons.add("36hr-icon", Skycons.SNOW);
-              } else if (thirtySix === "sleet") {
-                skycons.add("36hr-icon", Skycons.SLEET);
-              } else if (thirtySix === "wind") {
-                skycons.add("36hr-icon", Skycons.WIND);
-              } else if (thirtySix === "fog") {
-                skycons.add("36hr-icon", Skycons.FOG);
-              } else if (thirtySix === "cloudy") {
-                skycons.add("36hr-icon", Skycons.CLOUDY);
-              } else if (thirtySix === "partly-cloudy-day") {
-                skycons.add("36hr-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (thirtySix === "partly-cloudy-night") {
-                skycons.add("36hr-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (fourtyEight === "clear-day") {
-                skycons.add("48hr-icon", Skycons.CLEAR_DAY);
-              } else if (fourtyEight === "clear-night") {
-                skycons.add("48hr-icon", Skycons.CLEAR_NIGHT);
-              } else if (fourtyEight === "rain") {
-                skycons.add("48hr-icon", Skycons.RAIN);
-              } else if (fourtyEight === "snow") {
-                skycons.add("48hr-icon", Skycons.SNOW);
-              } else if (fourtyEight === "sleet") {
-                skycons.add("48hr-icon", Skycons.SLEET);
-              } else if (fourtyEight === "wind") {
-                skycons.add("48hr-icon", Skycons.WIND);
-              } else if (fourtyEight === "fog") {
-                skycons.add("48hr-icon", Skycons.FOG);
-              } else if (fourtyEight === "cloudy") {
-                skycons.add("48hr-icon", Skycons.CLOUDY);
-              } else if (fourtyEight === "partly-cloudy-day") {
-                skycons.add("48hr-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (fourtyEight === "partly-cloudy-night") {
-                skycons.add("48hr-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (day1Icon === "clear-day") {
-                skycons.add("day1-icon", Skycons.CLEAR_DAY);
-              } else if (day1Icon === "clear-night") {
-                skycons.add("day1-icon", Skycons.CLEAR_NIGHT);
-              } else if (day1Icon === "rain") {
-                skycons.add("day1-icon", Skycons.RAIN);
-              } else if (day1Icon === "snow") {
-                skycons.add("day1-icon", Skycons.SNOW);
-              } else if (day1Icon === "sleet") {
-                skycons.add("day1-icon", Skycons.SLEET);
-              } else if (day1Icon === "wind") {
-                skycons.add("day1-icon", Skycons.WIND);
-              } else if (day1Icon === "fog") {
-                skycons.add("day1-icon", Skycons.FOG);
-              } else if (day1Icon === "cloudy") {
-                skycons.add("day1-icon", Skycons.CLOUDY);
-              } else if (day1Icon === "partly-cloudy-day") {
-                skycons.add("day1-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (day1Icon === "partly-cloudy-night") {
-                skycons.add("day1-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (day2Icon === "clear-day") {
-                skycons.add("day2-icon", Skycons.CLEAR_DAY);
-              } else if (day2Icon === "clear-night") {
-                skycons.add("day2-icon", Skycons.CLEAR_NIGHT);
-              } else if (day2Icon === "rain") {
-                skycons.add("day2-icon", Skycons.RAIN);
-              } else if (day2Icon === "snow") {
-                skycons.add("day2-icon", Skycons.SNOW);
-              } else if (day2Icon === "sleet") {
-                skycons.add("day2-icon", Skycons.SLEET);
-              } else if (day2Icon === "wind") {
-                skycons.add("day2-icon", Skycons.WIND);
-              } else if (day2Icon === "fog") {
-                skycons.add("day2-icon", Skycons.FOG);
-              } else if (day2Icon === "cloudy") {
-                skycons.add("day2-icon", Skycons.CLOUDY);
-              } else if (day2Icon === "partly-cloudy-day") {
-                skycons.add("day2-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (day2Icon === "partly-cloudy-night") {
-                skycons.add("day2-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (day3Icon === "clear-day") {
-                skycons.add("day3-icon", Skycons.CLEAR_DAY);
-              } else if (day3Icon === "clear-night") {
-                skycons.add("day3-icon", Skycons.CLEAR_NIGHT);
-              } else if (day3Icon === "rain") {
-                skycons.add("day3-icon", Skycons.RAIN);
-              } else if (day3Icon === "snow") {
-                skycons.add("day3-icon", Skycons.SNOW);
-              } else if (day3Icon === "sleet") {
-                skycons.add("day3-icon", Skycons.SLEET);
-              } else if (day3Icon === "wind") {
-                skycons.add("day3-icon", Skycons.WIND);
-              } else if (day3Icon === "fog") {
-                skycons.add("day3-icon", Skycons.FOG);
-              } else if (day3Icon === "cloudy") {
-                skycons.add("day3-icon", Skycons.CLOUDY);
-              } else if (day3Icon === "partly-cloudy-day") {
-                skycons.add("day3-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (day3Icon === "partly-cloudy-night") {
-                skycons.add("day3-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (day4Icon === "clear-day") {
-                skycons.add("day4-icon", Skycons.CLEAR_DAY);
-              } else if (day4Icon === "clear-night") {
-                skycons.add("day4-icon", Skycons.CLEAR_NIGHT);
-              } else if (day4Icon === "rain") {
-                skycons.add("day4-icon", Skycons.RAIN);
-              } else if (day4Icon === "snow") {
-                skycons.add("day4-icon", Skycons.SNOW);
-              } else if (day4Icon === "sleet") {
-                skycons.add("day4-icon", Skycons.SLEET);
-              } else if (day4Icon === "wind") {
-                skycons.add("day4-icon", Skycons.WIND);
-              } else if (day4Icon === "fog") {
-                skycons.add("day4-icon", Skycons.FOG);
-              } else if (day4Icon === "cloudy") {
-                skycons.add("day4-icon", Skycons.CLOUDY);
-              } else if (day4Icon === "partly-cloudy-day") {
-                skycons.add("day4-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (day4Icon === "partly-cloudy-night") {
-                skycons.add("day4-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (day5Icon === "clear-day") {
-                skycons.add("day5-icon", Skycons.CLEAR_DAY);
-              } else if (day5Icon === "clear-night") {
-                skycons.add("day5-icon", Skycons.CLEAR_NIGHT);
-              } else if (day5Icon === "rain") {
-                skycons.add("day5-icon", Skycons.RAIN);
-              } else if (day5Icon === "snow") {
-                skycons.add("day5-icon", Skycons.SNOW);
-              } else if (day5Icon === "sleet") {
-                skycons.add("day5-icon", Skycons.SLEET);
-              } else if (day5Icon === "wind") {
-                skycons.add("day5-icon", Skycons.WIND);
-              } else if (day5Icon === "fog") {
-                skycons.add("day5-icon", Skycons.FOG);
-              } else if (day5Icon === "cloudy") {
-                skycons.add("day5-icon", Skycons.CLOUDY);
-              } else if (day5Icon === "partly-cloudy-day") {
-                skycons.add("day5-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (day5Icon === "partly-cloudy-night") {
-                skycons.add("day5-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-
-              if (day6Icon === "clear-day") {
-                skycons.add("day6-icon", Skycons.CLEAR_DAY);
-              } else if (day6Icon === "clear-night") {
-                skycons.add("day6-icon", Skycons.CLEAR_NIGHT);
-              } else if (day6Icon === "rain") {
-                skycons.add("day6-icon", Skycons.RAIN);
-              } else if (day6Icon === "snow") {
-                skycons.add("day6-icon", Skycons.SNOW);
-              } else if (day6Icon === "sleet") {
-                skycons.add("day6-icon", Skycons.SLEET);
-              } else if (day6Icon === "wind") {
-                skycons.add("day6-icon", Skycons.WIND);
-              } else if (day6Icon === "fog") {
-                skycons.add("day6-icon", Skycons.FOG);
-              } else if (day6Icon === "cloudy") {
-                skycons.add("day6-icon", Skycons.CLOUDY);
-              } else if (day6Icon === "partly-cloudy-day") {
-                skycons.add("day6-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (day6Icon === "partly-cloudy-night") {
-                skycons.add("day6-icon", Skycons.PARTLY_CLOUDY_NIGHT);
-              } else {
-                console.log("Dark Sky icon did not return a matching case");
-              }
-              
-              if (day7Icon === "clear-day") {
-                skycons.add("day7-icon", Skycons.CLEAR_DAY);
-              } else if (day7Icon === "clear-night") {
-                skycons.add("day7-icon", Skycons.CLEAR_NIGHT);
-              } else if (day7Icon === "rain") {
-                skycons.add("day7-icon", Skycons.RAIN);
-              } else if (day7Icon === "snow") {
-                skycons.add("day7-icon", Skycons.SNOW);
-              } else if (day7Icon === "sleet") {
-                skycons.add("day7-icon", Skycons.SLEET);
-              } else if (day7Icon === "wind") {
-                skycons.add("day7-icon", Skycons.WIND);
-              } else if (day7Icon === "fog") {
-                skycons.add("day7-icon", Skycons.FOG);
-              } else if (day7Icon === "cloudy") {
-                skycons.add("day7-icon", Skycons.CLOUDY);
-              } else if (day7Icon === "partly-cloudy-day") {
-                skycons.add("day7-icon", Skycons.PARTLY_CLOUDY_DAY);
-              } else if (day7Icon === "partly-cloudy-night") {
-                skycons.add("day7-icon", Skycons.PARTLY_CLOUDY_NIGHT);
+              if (condition === "clear-day") {
+                skycons.add(icon, Skycons.CLEAR_DAY);
+              } else if (condition === "clear-night") {
+                skycons.add(icon, Skycons.CLEAR_NIGHT);
+              } else if (condition === "rain") {
+                skycons.add(icon, Skycons.RAIN);
+              } else if (condition === "snow") {
+                skycons.add(icon, Skycons.SNOW);
+              } else if (condition === "sleet") {
+                skycons.add(icon, Skycons.SLEET);
+              } else if (condition === "wind") {
+                skycons.add(icon, Skycons.WIND);
+              } else if (condition === "fog") {
+                skycons.add(icon, Skycons.FOG);
+              } else if (condition === "cloudy") {
+                skycons.add(icon, Skycons.CLOUDY);
+              } else if (condition === "partly-cloudy-day") {
+                skycons.add(icon, Skycons.PARTLY_CLOUDY_DAY);
+              } else if (condition === "partly-cloudy-night") {
+                skycons.add(icon, Skycons.PARTLY_CLOUDY_NIGHT);
               } else {
                 console.log("Dark Sky icon did not return a matching case");
               }
               skycons.play();
             }
-            weatherIcon();
+            weatherIcon(now, "now-icon");
+            weatherIcon(twelve, "12hr-icon");
+            weatherIcon(twentyFour, "12hr-icon");
+            weatherIcon(twentyFour, "24hr-icon");
+            weatherIcon(thirtySix, "36hr-icon");
+            weatherIcon(fourtyEight, "48hr-icon");
+            weatherIcon(day1Icon, "day1-icon");
+            weatherIcon(day2Icon, "day2-icon");
+            weatherIcon(day3Icon, "day3-icon");
+            weatherIcon(day4Icon, "day4-icon");
+            weatherIcon(day5Icon, "day5-icon");
+            weatherIcon(day6Icon, "day6-icon");
+            weatherIcon(day7Icon, "day7-icon");
 
             var rain = data.currently.precipProbability;
             $("#rain").html(rain + "%");            
